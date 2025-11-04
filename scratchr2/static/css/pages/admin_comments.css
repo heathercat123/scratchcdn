@@ -1,0 +1,89 @@
+DIV.comments_container SELECT.c_type {
+    width: 85px;
+}
+
+DIV.comments_container SELECT.c_page {
+    width: 60px;
+}
+
+ul.comments {
+    list-style: none;
+    margin: 0;
+    border-color: black;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+ul.comments li {
+    margin: 0;
+    padding: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+}
+ul.comments li span.info {
+    font-size: 11px;
+    margin-left: 5px;
+    padding-left: 3px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+/*
+Comment color coding:
+    White - default
+    Yellow - markedbyfilter
+    Red - censbycomm, censbyadmin, parentcommentcensored, delbyusr, delbyadmin
+    Blue - highlight on hover
+*/
+ul.comments li.cv_flagged,
+ul.comments li.cv_markedbyfilter {
+    background-color: #FFFFBB;
+}
+
+ul.comments li.cv_censbyadmin, 
+ul.comments li.cv_censbyfilter,
+ul.comments li.cv_delbyadmin,
+ul.comments li.cv_censbycomm,
+ul.comments li.cv_parentcommentcensored{
+    background-color: #FF9999;
+}
+
+ul.comments li.cv_delbyusr,
+ul.comments li.cv_delbyparentcomment {
+    background-color: lightgrey;
+}
+
+/*
+visible comments: (ct = comment type)
+    All comment types are default white (#FFFFFF)
+    Hover'ed comments are default light blue
+*/
+ul.comments li.ct_project,
+ul.comments li.ct_profile,
+ul.comments li.ct_studio {
+    background-color: #FFFFFF;
+}
+
+.comments ul.comments li:hover {
+    background-color: #A9D4FF;
+}
+
+ul.comments .restore a,
+ul.comments .remove a {
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 15px;
+    border: 1px solid #999;
+    color: #999;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+ul.comments .restore a:hover,
+ul.comments .restore a:focus,
+ul.comments .remove a:hover,
+ul.comments .remove a:focus {
+    background-color: lightgrey;
+    text-decoration: none;
+    color: red;
+}

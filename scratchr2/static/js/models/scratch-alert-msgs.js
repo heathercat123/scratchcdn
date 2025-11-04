@@ -1,0 +1,37 @@
+var Scratch = Scratch || {};
+// ensure gettext_noop is defined. It's only needed for message extraction.
+var gettext_noop = gettext_noop || function (msgid) {return msgid;};
+Scratch.ALERT_MSGS = {
+  'error': gettext_noop('Oops! Something went wrong'),
+  'inappropriate-generic': gettext_noop('Hmm...the bad word detector thinks there is a problem with your text. Please change it and remember to <a target="_blank" href="/community_guidelines/">be respectful</a>.'),
+  'image-invalid': gettext_noop('Upload a valid image. The file you uploaded was either not an image or a corrupted image.'),
+  'thumbnail-missing': gettext_noop('Missing file'),
+  'thumbnail-upload-bad': gettext_noop('Bad upload'),
+  'thumbnail-too-large': gettext_noop('Maximum file size is 512 KB and less than 500x500 pixels.'),
+  'thumbnail-confirm-email': gettext_noop('Please confirm your email address to perform this action.'),
+  'inappropriate-comment': gettext_noop('Hmm...the bad word detector thinks there is a problem with your comment. Please change it and remember to <a target="_blank" href="/community_guidelines/">be respectful</a>.'),
+  'comment-has-chat-site': gettext_noop('Uh oh! This comment contains a link to a website with unmoderated chat. For safety reasons, please do not link to these sites!'),
+  'empty-comment': gettext_noop("You can't post an empty comment!"),
+  'delete_comment': gettext_noop('<div title="Delete Comment?"><p>Are you sure you want to delete this comment? If the comment is mean or disrespectful, please click report instead, to let the Scratch Team know about it.</p></div>'),
+  'report_comment': gettext_noop('<div title="Report Comment?"></p>Are you sure you want to report this comment?</p></div>'),
+  'report_comment_educator': gettext_noop('<div title="Delete Comment?"></p>Are you sure you want to delete this comment?</p></div>'),
+  'followed': gettext_noop('You are now following '),
+  'unfollowed': gettext_noop('You are no longer following '),
+  'comment-spam': gettext_noop("Hmm, seems like you've posted the same comment a bunch of times. Please don't spam."),
+  'comment-flood': gettext_noop("Woah, seems like you're commenting really quickly. Please wait longer between posts."),
+  'comment-muted': gettext_noop("Hmm, the filterbot is pretty sure your recent comments weren't ok for Scratch, so your account has been muted for the rest of the day. :/"),
+  'comment-muted-duration': gettext_noop("You will be able to comment again %(duration)s. Your account has been paused from commenting until then."),
+  'comment-bad-general-message': gettext_noop("It appears that your comment didn’t follow the Scratch Community Guidelines."),
+  'comment-unconstructive': gettext_noop("Hmm, the filterbot thinks your comment may be mean or disrespectful. Remember, most projects on Scratch are made by people who are just learning how to program. Read the <a href='/community_guidelines'>community guidelines</a>, and be nice."),
+  'comment-unconstructive-message': gettext_noop("It appears that your comment was saying something that might have been hurtful."),
+  'comment-vulgarity-message': gettext_noop("It appears that your comment contains a bad word."),
+  'comment-pii-message': gettext_noop("Your comment appeared to be sharing or asking for private information."),
+  'comment-spam-message': gettext_noop("Your most recent comment appeared to contain advertising, text art, or a chain message."),
+  'comment-disallowed': gettext_noop("Hmm, it looks like comments have been turned off for this page. :/"),
+  'project-complaint-length': gettext_noop("That's too short. Please describe in detail what's inappropriate or disrespectful about the project."),
+  'project-complaint-buglength': gettext_noop("That's too short! Please describe in detail what you expected the project to do, and how exactly it is broken. Thanks!"),
+  'editable-text-too-long': gettext_noop("That's too long! Please find a way to shorten your text."),
+  'muted-create-studio': gettext_noop("You will be able to create studios again %(duration)s. Your account has been paused until then."),
+  'studio-rate-limit': gettext_noop("Woah, seems like you\'re creating studios really quickly. Please wait a bit longer between creating studios."),
+  'thumbnail-changed': gettext_noop("Thumbnail changed")
+}

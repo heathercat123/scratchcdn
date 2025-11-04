@@ -1,0 +1,45 @@
+
+#page-403 .box-content,
+#page-404 .box-content, 
+#page-500 .box-content {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#page-403 .box-head,
+#page-404 .box-head, 
+#page-500 .box-head {
+  padding-top: 20px;
+}
+
+#page-403 .box-header h1,
+#page-404 .box-header h1, 
+#page-500 .box-header h1 {
+  color: #F59533;
+  margin: 0;
+}
+
+#page-404 .search {
+    padding: 15px 0px;
+}
+
+#page-404 .search input  {
+  box-shadow: none;
+  width: 400px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#page-404 .box-content form {
+  display: inline-block;
+}
+
+#page-404 form {
+  float: none;
+}
+
+#page-404 .status-code {
+    padding-bottom: 20px;
+}
+
