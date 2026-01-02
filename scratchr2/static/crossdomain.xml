@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+    <allow-access-from domain="cdn.scratch.mit.edu" to-ports="*"/>
+    <allow-access-from domain="scratch.mit.edu" to-ports="*"/>
+    <allow-access-from domain="staging.scratch.mit.edu" to-ports="*"/>
+    <allow-access-from domain="*.scratch.ly" to-ports="*"/>
+    <allow-access-from domain="scratch.ly" to-ports="*"/>
+    <allow-access-from domain="scratchx.org" secure="false"/>
+    <allow-http-request-headers-from domain="*.scratch.mit.edu" headers="*"/>
+    <allow-http-request-headers-from domain="scratch.mit.edu" headers="*"/>
+    <allow-http-request-headers-from domain="*.scratch.ly" headers="*"/>
+    <allow-http-request-headers-from domain="scratch.ly" headers="*"/>
+</cross-domain-policy>
