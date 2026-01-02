@@ -149,6 +149,15 @@ dd.usercontacts, dd.postavatar {
 dd.postavatar {
     margin-bottom: 5px;
 }
+
+dd.postavatar img.avatar-badge {
+    border: 3px solid #FAA51D;
+}
+
+dd.postavatar .avatar-badge-wrapper {
+    width: 90px;
+    height: 114px;
+}
 .djangobb .username {
     font-weight: bold;
 }

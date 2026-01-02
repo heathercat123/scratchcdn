@@ -1,4 +1,4 @@
 # scratchcdn
-Archived files from Scratch's CDN before they nuked a bunch of files and kind of just broke much of the server. Data downloaded on August 11, 2025.
+Hey, look, it's /scratchr2/static!
 
-**NOTE**: Not every file is present as no official directory listing is available. As a direct result, every file and directory was found by examining the website's frontend code, examining *Issues* and *Commits* from Scratch's open source projects, examining the offline editor, examining the [Scratch 2.0 website development visualization](https://vimeo.com/40179487), and guesswork. As such, many files are missing, but more than the essential is present.
+**NOTE**: Not every file is present as no official directory listing is available. As a direct result, every file and directory was found by examining the website's frontend code, examining Issues and Commits from Scratch's open source projects, examining the offline editor, examining the [Scratch 2.0 website development visualization](https://vimeo.com/40179487), sniffing the Scratch 2 Offline Editor and guesswork. As such, many files are missing, but more than the essential is present.

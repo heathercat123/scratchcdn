@@ -151,6 +151,21 @@
   display: block;
 }
 
+/* Membership avatars */
+
+#comments img.avatar-badge {
+    border-width: 2px;
+}
+
+#comments .avatar-badge-wrapper {
+    display: flex;
+    float: left;
+    margin-right: 10px;
+
+    width: 45px;
+    height: 57px;
+}
+
 #comments .comment .info {
   display: block;
   float: left;

@@ -327,6 +327,19 @@
   margin-top: -3px;
 }
 
+#topnav ul.account-nav .logged-in-user .user-icon.avatar-badge {
+  border: 1px solid #FAA51D;
+  border-radius: 17%;
+  /* Adds slight margin to the frame without making the account nav container overflow */
+  transform: translateY(9.5px);
+}
+
+#topnav ul.account-nav .logged-in-user .avatar-badge-wrapper {
+  width: 24px;
+  margin-right: 5px;
+  transform: translateY(2px);
+}
+
 #topnav ul.account-nav .logged-in-user{
   color: #fff;
   cursor: pointer;

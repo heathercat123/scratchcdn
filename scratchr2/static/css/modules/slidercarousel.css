@@ -56,8 +56,8 @@
 
 
 /* items */
-.slider-carousel .item{display:block;float:left;margin-right:30px}
-.slider-carousel li.item:last-child{display:block;float:left;margin-right:-1px}
+.slider-carousel .item{display:flex;flex-direction:column;float:left;margin-right:30px}
+.slider-carousel li.item:last-child{display:flex;flex-direction:column;float:left;margin-right:-1px}
 .slider-carousel .item>img{display:block;line-height:1}
 .slider-carousel .item.empty {float: none;padding: 0px;width: 848px;text-align: center}
 .slider-carousel .item.empty h4 {color: #aaa;position: absolute;top: 30%}
@@ -72,7 +72,7 @@
 .slider-carousel.horizontal {}
 .slider-carousel.horizontal.scratchslider {padding-bottom:20px;}
 .slider-carousel.horizontal .viewport { width: 100%;}
-.slider-carousel.horizontal .scroll-content { overflow:hidden;width: 4000px; float: left; left:0;white-space:nowrap; min-height:80px;position:relative}
+.slider-carousel.horizontal .scroll-content { overflow:hidden;width: 4000px; float: left; left:0;white-space:nowrap; min-height:80px;position:relative; display: flex; align-items: baseline;}
 
 
 /* horizontal controls*/
@@ -129,6 +129,16 @@
 /* user items */
 .slider-carousel .user.thumg a.image{display:block}
 
+/* Membership avatars */
+
+.slider-carousel img.avatar-badge {
+    border: 2px solid #FAA51D;
+}
+
+.slider-carousel .avatar-badge-wrapper {
+    width: 60px;
+    height: 82px;
+}
 
 .prevent-select,.prevent-select *{
 -webkit-user-select: none;

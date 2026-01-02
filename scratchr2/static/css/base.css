@@ -1144,7 +1144,40 @@ a.bookmark {
 }
 
 
+/* Membership badges and labels */
 
+img.avatar-badge {
+    border: 1px solid #FAA51D;
+    box-sizing: border-box;
+    border-radius: 17%;
+    box-shadow: none;
+}
+
+.avatar-badge-wrapper {
+    display: inline-flex;
+    background: url('../membership/cat-ears.svg') no-repeat top ;
+    background-size: contain;
+    align-items: flex-end;
+}
+
+.membership-label-container {
+display: inline-flex;
+    padding: 2px 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    background: #855CD6;
+    vertical-align: middle;
+    transform: translateY(-0.8px);
+}
+
+.membership-label-text {
+    color: #fff;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: normal;
+    text-shadow: none;
+}
 
 /* ================== BUBBLE WITH A BORDER AND TRIANGLE ===== */
 

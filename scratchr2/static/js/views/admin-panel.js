@@ -14,7 +14,10 @@ Scratch.AdminPanel = Backbone.View.extend({
     'click [data-control-action="clear_project_image"]' : 'clear_project_image',
     'click [data-control-action="add_teacher_status"]' : 'addTeacherStatus',
     'click [data-control-action="remove_teacher_status"]' : 'removeTeacherStatus',
-    'click [data-control-action="confirm-email"]' : 'confirmUserEmail'
+    'click [data-control-action="remove_student"]' : 'removeStudent',
+    'click [data-control-action="confirm-email"]' : 'confirmUserEmail',
+    'click [data-control-action="grant-admin-membership"]' : 'grantAdminMembership',
+    'click [data-control-action="revoke-admin-membership"]' : 'revokeAdminMembership'
   },
 
   initialize: function() {
@@ -561,6 +564,7 @@ Scratch.AdminPanel = Backbone.View.extend({
     var $dialog = $(
       '<p>Are you sure? After a teacher has created classrooms, this may not be undone.</p>');
     $dialog.dialog({
+      title: "Turn regular user into teacher",
       buttons: {
         Cancel: function() { $(this).dialog('close'); },
         "I'm sure": function () {
@@ -576,6 +580,7 @@ Scratch.AdminPanel = Backbone.View.extend({
     var $dialog = $(
       '<p>Are you sure you want to remove the user\'s teacher status?</p>');
     $dialog.dialog({
+      title: "Turn teacher into regular user",
       buttons: {
         Cancel: function() { $(this).dialog('close'); },
         "I'm sure": function () {
@@ -586,6 +591,31 @@ Scratch.AdminPanel = Backbone.View.extend({
     });
   },
 
+  removeStudent: function (e) {
+    var view = this;
+    var $dialog = $(
+      '<p>Are you sure you want to remove this student from their class? The student account will become a regular user and this can not be undone.</p>');
+    $dialog.dialog({
+      title: "Remove student from class?",
+      buttons: {
+        Cancel: function() { $(this).dialog('close'); },
+        "I'm sure :)": function () {
+          var url = '/scratch_admin/profile/' + $(e.target).data('controlUser') + '/dissociate_student/';
+          $.ajax(url, {
+            type: 'POST',
+            dataType: 'json',
+            success: function () {
+              document.location.reload()
+            },
+            error: function (data) {
+              Scratch.AlertView.msg($('#alert-view'), {alert: 'error', msg: data.responseJSON.error});
+            }
+          })
+          $(this).dialog('close');
+        }
+      }
+    });
+  },
 
   selectState: function(newState) {
     $(this.el).find('div.status[data-control-action].selected').removeClass('selected');
@@ -755,6 +785,41 @@ Scratch.AdminPanel = Backbone.View.extend({
           Scratch.AlertView.msg($('#alert-view'), {alert: 'success', msg: 'Email Confirmed.'});
         } else {
           Scratch.AlertView.msg($('#alert-view'), {alert: 'error', msg: 'Confirmation unsuccessful.'});
+        }
+      }
+    })
+  },
+
+  grantAdminMembership: function (e) {
+    var view = this;
+    const action = 'grant-admin-membership'
+    const username = $(e.target).data('controlUser');
+
+    view.updateMembershipData(username, action);
+  },
+
+  revokeAdminMembership: function (e) {
+    var view = this;
+    const action =  'revoke-admin-membership';
+    const username = $(e.target).data('controlUser');
+    
+    view.updateMembershipData(username, action);
+  },
+
+  updateMembershipData: function (username, action) {
+    $.ajax('/scratch_admin/profile/' + username + '/update_membership/', {
+      type: 'POST',
+      data: { action },
+      dataType: 'json',
+      success: function (data, textStatus, jqXHR) {
+        if (data.err) {
+          Scratch.AlertView.msg($('#alert-view'), { alert: 'error', msg: data.err[0] });
+        } else if (data.success) {
+          Scratch.AlertView.msg($('#alert-view'), { alert: 'success', msg: 'Membership updated successfully.' });
+
+          document.location.reload()
+        } else {
+          Scratch.AlertView.msg($('#alert-view'), { alert: 'error', msg: 'Could not update membership.' });
         }
       }
     })

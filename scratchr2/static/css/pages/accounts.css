@@ -296,3 +296,37 @@ body.password-reset .separator {
   float: left;
   margin-right: 10px;
 }
+
+/* Membership settings */
+
+.membership-settings-header {
+  margin-bottom: 24px;
+  color: #554747;
+}
+
+.membership-settings-header p {
+  margin-top: 0;
+}
+
+#membership-settings label, #membership-settings .field-wrapper {
+    color: #554747;
+}
+
+#membership-settings .field-wrapper {
+  margin-bottom: 12px;
+}
+
+#membership-settings .field-wrapper .radio-options .radio-option {
+  display: inline-flex;
+  margin-right: 16px;
+  gap: 8px;
+}
+
+#membership-settings .field-wrapper input[type="radio"] {
+  box-shadow: none;
+  margin: 0;
+}
+
+#membership-settings button {
+  margin-top: 12px;
+}
