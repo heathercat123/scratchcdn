@@ -323,8 +323,12 @@
   width: 24px;
   border-radius: 1px;
   vertical-align: middle;
-  margin-right: 5px;
   margin-top: -3px;
+}
+
+#topnav ul.account-nav .logged-in-user .avatar-wrapper {
+  margin-right: 5px;
+  display: inline-block;
 }
 
 #topnav ul.account-nav .logged-in-user .user-icon.avatar-badge {
@@ -335,8 +339,8 @@
 }
 
 #topnav ul.account-nav .logged-in-user .avatar-badge-wrapper {
+  display: inline-flex;
   width: 24px;
-  margin-right: 5px;
   transform: translateY(2px);
 }
 

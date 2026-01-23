@@ -146,7 +146,6 @@
 #comments .comment img.avatar {
   float: left;
   height: 45px;
-  margin-right: 10px;
   width: 45px;
   display: block;
 }
@@ -160,10 +159,14 @@
 #comments .avatar-badge-wrapper {
     display: flex;
     float: left;
-    margin-right: 10px;
 
     width: 45px;
     height: 57px;
+}
+
+#comments .comment .avatar-wrapper {
+  float: left;
+  margin-right: 10px;
 }
 
 #comments .comment .info {
