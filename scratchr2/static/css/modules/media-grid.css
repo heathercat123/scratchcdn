@@ -68,6 +68,12 @@
   margin-right:12px;
 }
 
+.media-grid .user.thumb.item .avatar-wrapper {
+  height: 82px;
+  display: inline-flex;
+  align-items: flex-end;
+}
+
 .media-grid .gallery.thumb.item {
   margin-right: 33px;
 }
