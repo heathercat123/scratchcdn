@@ -1,0 +1,951 @@
+/** CLASSES THAT SHOULD BE IN BOOTSTRAP **/
+ul.inline, ol.inline {
+  margin-left: 0;
+  list-style: none;
+}
+ul.inline>li, ol.inline>li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+ul.inline>li.first {
+  padding-left: 0px;
+}
+
+#create-project {
+  margin-left: 30px;
+}
+
+.thumb img {
+  margin-bottom: 5px;
+}
+
+.thumb .date {
+  color: #999;
+  font-size: .9em;
+}
+
+.avatar [data-control="edit"] {
+  display: none;
+  opacity: .8;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px 5px;
+  text-shadow: none;
+  color: #fff;
+  font-size: 11px;
+  background-color: #333;
+  cursor: pointer;
+  border-bottom-right-radius: 5px;
+}
+
+.avatar [data-control="edit"] input.hidden {
+  top: 0;
+  left: 0;
+  font-size: 100px; /* this lets you single click the input in IE */
+}
+
+.avatar {
+  width: 150px;
+  height: 85px;
+  text-align: center;
+}
+
+.edit [data-control="edit"]{
+  display: block;
+}
+
+.box-content {
+  padding: 0px;
+}
+
+.media-list {
+  padding: 10px 0px 35px 0px;
+  margin: 0px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.media-list li {
+  clear: both;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+}
+
+.media-item-content {
+  padding: 20px 15px;
+  position: relative;
+  height: 83px;
+}
+
+.media-item-content .checkbox {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.media-thumb {
+  position: relative;
+  float: left;
+  background: #fff;
+  text-align: center;
+}
+.media-thumb a {
+  line-height: 0px;
+  display: block;
+}
+.media-thumb img {
+  width: 100px;
+  border: 1px solid #ddd;
+}
+.media-thumb.user img {
+  height: 100px;
+}
+.media-thumb.gallery img {
+  height: 80px;
+}
+.media-thumb.classroom img {
+  height: 80px;
+}
+
+.media-thumb a.action-link {
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 4px 0;
+}
+
+.media-item-content .media-info {
+  margin-left: 115px;
+  margin-right: 10px;
+}
+
+.media-item-content .media-info .media-info-item,
+.media-item-content .media-info .media-info-group, {
+  display: block;
+}
+
+.media-item-content .media-info .media-info-group .media-info-item {
+  display: inline;
+}
+
+.media-item-content .media-info .media-info-group .media-info-item {
+  border-right: 1px solid #ccc;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+.media-item-content .media-info .media-info-group .media-info-item.last {
+  border-right: none;
+}
+.media-item-content .media-info ul.media-links {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+}
+.media-item-content .media-info ul.media-links li {
+  display: inline;
+  border: none;
+  margin: 0 25px 0 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.media-info-item.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.media-info-item.title a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-info-item.date,
+.media-info-item.status,
+.media-info-item.details
+ {
+  color: #888;
+  font-size: 11px;
+}
+
+.media-info-item.rank {
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+.media-info-item
+.media-info-item.date {
+  line-height: 14px;
+}
+
+.media-info-item.status {
+  display: inline-block !important;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 0px;
+  border-radius: 7px;
+  border: 1px solid #387038;
+  padding: 0px 5px;
+  text-shadow: none;
+  color: #fff;
+  background-color: #5BB75B;
+  margin-right: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.media-info-item.status span {
+  display: none;
+}
+
+.media-info-item.profile
+ {
+  font-size: 12px;
+}
+
+.media-item-content .media-control {
+  float: left;
+  position: relative;
+  top: 20px;
+}
+
+.media-item-content .media-control-edit {
+  margin-top: 15px;
+}
+
+.media-item-content .dropdown li {
+  border-bottom: 0px;
+}
+
+.media-item-content .media-stats {
+  position: relative;
+  /*float: right;
+  width: 120px;
+  height: 85px;
+  position: relative;
+  text-align: center;*/
+}
+
+.media-item-content .media-action {
+  float: right;
+  top: 20px;
+  position: relative;
+  width: 100px;
+}
+
+.media-item-content .media-stats .unshare {
+  display: inline-block;
+  margin-left: 20px;
+  clear: both;
+  padding-top: 8px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  text-align: center;
+  width: 110px;
+}
+
+.media-item-content .media-stats .stat {
+  font-size: 11px;
+  display: inline-block;
+  float: left;
+  min-width: 55px;
+  color: #666;
+}
+
+.media-item-content .media-stats .stat .icon-xs {
+  vertical-align: middle;
+  margin: 0px;
+  opacity: .4;
+}
+
+.icon.see-inside.black {
+  background: url('../../images/see-inside.png') no-repeat center;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  padding-left: 0px;
+  margin:2px 2px 0 2px;
+  background-size: 23px;
+}
+
+.media-item-content .media-status,
+.media-item-content .media-trash {
+  float: left;
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+.media-item-content .media-untrash {
+  float: right;
+  position: relative;
+  top: 20px;
+  right: 10px;
+}
+
+.media-item-content.trashed .media-info {
+  width: 245px;
+}
+
+
+.media-item-content .media-status .status-icon {
+  background-size: 25px 15px;
+  opacity: .8;
+  display: inline-block;
+  width: 22px;
+  height: 15px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.not-shared.media-item-content .media-status .status-icon {
+  background: url('../../images/notshared_user.png') no-repeat center;
+  background-size: 15px 14px;
+}
+
+.media-status .dropdown-menu li{
+  font-size: 12px;
+}
+
+div[data-control="load-more"] {
+  position: absolute;
+  left: 45%;
+  bottom: 15px;
+}
+
+.ajax-loader {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+}
+
+#sidebar li.sub-list a {
+  margin-left: 15px;
+}
+
+.classroom-header {
+  height: 67px;
+}
+
+.classroom-content-h-tabs {
+  margin-bottom: 1px;
+}
+.classroom-content .htab-content .tab {
+  padding: 20px 30px;
+}
+.classroom-content .htab-content h2 {
+  margin: 0px 0px 15px;
+}
+.classroom-content .htab-content .class-thumb {
+  float: left;
+  height: 85px;
+  position: relative;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.classroom-content .htab-content .classroom-details {
+  margin-left: 150px;
+  color: #999;
+}
+.classroom-content .htab-content .classroom-details form {
+  display: inline;
+}
+
+.classroom-content .htab-content .classroom-details ul.inline {
+  margin: 0;
+}
+.classroom-content .htab-content .classroom-details ul.inline>li{
+  margin-bottom: 0;
+}
+.classroom-content .htab-content .tab .action-bar {
+  position: relative;
+  top: 0;
+  left: -18px;
+  /*position: absolute;
+  right: 0;
+  top: -38px;*/
+}
+.classroom-content .htab-content .tab .action-bar .inner {
+  border: none;
+  background-color: transparent;
+}
+ul.inline.right-divider>li {
+  border-right: 1px solid #ccc;
+  padding-right: 7px;
+}
+ul.inline.right-divider>li[:first] {
+  padding-left: 0;
+}
+ul.inline.right-divider>li.last {
+  border-right: none;
+}
+ul.inline.action-links {
+  font-size: 12px;
+}
+.row {
+  margin-top: 20px;
+}
+.row .col-left {
+  width: 50%;
+  float: left;
+}
+.row .col-right {
+  width: 50%;
+  float: right;
+}
+
+.row .col-left .content {
+  padding-right: 30px;
+}
+
+.row.empty {
+  text-align: center;
+}
+
+.educator-tools form {
+  margin-bottom: 15px;
+}
+
+.small {
+  font-size: 90%;
+}
+
+.large {
+  font-size: 110%;
+}
+
+#classroom-manage .class-settings {
+  margin-top: 40px;
+}
+#classroom-manage .button-wrapper {
+  text-align: right;
+}
+
+#classroom-manage #bio, #classroom-manage #status {
+  position: relative;
+}
+#classroom-manage #status .small-text, #classroom-manage #bio .small-text {
+  position: absolute;
+  bottom: -20px
+}
+.right-action-button {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+/*.educator-tools .registration-wrapper {
+  margin-bottom: 20px;
+}
+.educator-tools .registration-wrapper label {
+  float: left;
+  padding-top: 5px;
+}
+.educator-tools .registration-wrapper a {
+  float: right;
+}
+.educator-tools .registration-wrapper p {
+  margin: 9px 0px;
+}*/
+
+
+#classroom-students .media-list > li {
+  clear: none;
+  border: none;
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 14px
+}
+#classroom-students .media-thumb {
+  text-align: left;
+}
+#classroom-students .media-thumb .header {
+  display: flex;
+  width: 118px;
+  height: 36px;
+}
+#classroom-students .media-thumb .header > .username {
+  align-self: flex-end;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  font-size: .8em;
+  line-height: 1em;
+  padding-bottom: 4px;
+  text-align: left;
+}
+#classroom-students .media-item-content {
+  padding: 0 0 25px 0;
+}
+#classroom-students.media-item-content .media-thumb img {
+  width: 90px;
+
+  height: 70px;
+}
+#classroom-students .student-banned-message {
+  display: block;
+  color: #888;
+  font-style: italic;
+}
+#classroom-tab-header {
+  overflow: hidden;
+}
+.classroom-content .row.modal-buttons {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.classroom-content .row.modal-buttons .button-wrapper {
+  text-align: right;
+}
+
+.info {
+  color: #888;
+}
+
+.errors {
+  background: #fcc;
+  border: 1px solid red;
+  border-radius: 5px;
+
+  /* Scroll after reaching max height */
+  max-height: 120px;
+  overflow-y: auto;
+
+  /* Hidden by default */
+  display: none;
+}
+
+.errors ul, .errors p {
+  margin: 1em 0 1em 2em;
+}
+
+#classroom-students .no-students{
+  text-align: center;
+}
+#classroom-students .no-students .col {
+  box-sizing: border-box;
+  margin: 35px 0px;
+}
+#classroom-students .no-students .col-left {
+  border-right: 1px solid #E0E0E0;
+}
+#classroom-students .no-students .col-right {
+  border-left: 1px solid #E0E0E0;
+}
+#classroom-students .no-students .action-wrapper{
+  width: 225px;
+  height: 200px;
+  margin: 15px 15px;
+  position: relative;
+}
+#classroom-students .no-students .col-right .action-wrapper .button-wrapper{
+  float: left;
+}
+#classroom-students .no-students .add-student-wrapper {
+  float: right;
+}
+#classroom-students .no-students p.action-details {
+  font-size: 95%;
+}
+#classroom-studios .no-studios {
+  text-align: center;
+}
+#classroom-studios .add-studio-wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+}
+#classroom-activity .media-list li {
+  padding: 5px 0;
+}
+#classroom-activity .tab-content .action-bar {
+  position: relative;
+  top: 0;
+  left: -18px;
+}
+#classroom-activity .comment-block {
+  margin: 10px 25px;
+}
+#classroom-activity .comment-text {
+  padding: 5px 8px;
+  border: solid 1px #ddd;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+
+a.unread-alerts {
+  text-decoration: none;
+}
+
+.alert-icon.small {
+  background-image: url(../../images/educator/alert-sm.png);
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  margin-bottom: -2px;
+}
+
+.alert-icon.large {
+  background-image: url(../../images/educator/alert-lg.png);
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+}
+
+[data-content="alert-count"] {
+  color: #d82027;
+}
+
+#alerts-content [data-control="filtering"] .dropdown-menu {
+  min-width: 225px;
+}
+
+#unread-alert-messages {
+  background-color: #fefcd3;
+  padding: 25px 35px;
+}
+
+#unread-alert-messages .alert-icon.small {
+  display: none;
+}
+
+#unread-alert-messages ul.classroom-alerts {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 65px;
+}
+
+#unread-alert-messages .alert-icon {
+  float: left;
+}
+
+#unread-alert-messages .classroom-alerts li span.delete {
+  float: right;
+  display: inline-block;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0px 5px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#unread-alert-messages .classroom-alerts li span.delete:hover {
+  background-color: #ddd;
+  color: #fff;
+}
+
+.exclamation-icon.large {
+  background-image: url(../../images/educator/exclamation.svg);
+  background-size: contain;
+  width: 10px;
+  height: 20px;
+  display: inline-block;
+}
+
+.control-label-narrow .exclamation-icon.large {
+  margin-left: 2px;
+}
+
+/* necessary to keep checkbox's width: auto from overriding parent width*/
+.checkbox-wrapper {
+  width: inherit;
+}
+.pii-confirm-text {
+    line-height: 1.5em;
+}
+
+.controls.tooltip.pii-notice {
+    padding-top: 12px;
+}
+#student-upload-modal .controls.tooltip.pii-notice {
+    padding-top: 4px;
+}
+
+[data-control="load-more"] .ajax-loader {
+  position: absolute;
+  top: -1px;
+  width: 110%;
+  height: 110%;
+  border: 1px solid #fff;
+  left: -1px;
+  z-index: 99;
+}
+
+.alert-item-content {
+  padding: 5px 15px;
+  position: relative;
+}
+.alert-classroom-data {
+  margin-left: 25px;
+  color: #999;
+}
+/* modal forms in Educator Stuff */
+.form-horizontal .modal-subheader {
+  padding: 20px 15px 5px;
+  background-color: #eee;
+  border-top: 1px solid #e0e0e0;
+
+}
+.form-horizontal .controls {
+  clear: both;
+}
+.form-horizontal .control-label {
+  float: left;
+  width: 105px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.form-horizontal .control-label-narrow {
+  float: left;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.form-horizontal .control-block-right {
+  line-height: 1.5em;
+  font-size: 14px;
+}
+.form-horizontal .small {
+  font-size: 13px;
+}
+
+.form-horizontal input[type="text"], .form-horizontal input[type="password"] {
+  width: 400px;
+}
+
+.form-horizontal select {
+  width: 410px;
+}
+
+.form-horizontal input[type="button"],
+.form-horizontal input[type="reset"],
+.form-horizontal input[type="submit"] {
+  width: auto;
+  height: auto;
+  min-width: 65px;
+}
+
+.form-horizontal .label-above label {
+  float: none;
+  width: 100%;
+}
+.form-horizontal .label-above textarea {
+  width: 516px;
+}
+
+.form-horizontal .tooltip.right .hovertext {
+  top: 0;
+}
+.tooltip .hovertext .text{
+  line-height: 18px;
+}
+.form-horizontal .ajax-loader {
+  display: inline-block;
+  background-color: #f5f5f5;
+  width: 40px;
+  height: 30px;
+  vertical-align: middle;
+}
+.form-horizontal .media-thumb {
+  margin-right: 20px;
+  margin-bottom: 35px;
+}
+.input-append, .input-prepend {
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  font-size: 0;
+  white-space: nowrap;
+  width: 100%;
+}
+.form-horizontal .input-append, .form-horizontal .input-prepend {
+  width: 400px;
+}
+.input-append input, .input-prepend input {
+  display: inline-block;
+  vertical-align: top;
+  height: 22px;
+  width: 85%;
+}
+#reg_link {
+  width: 78%;
+}
+.form-horizontal .input-append input, .form-horizontal .input-prepend input{
+  width: 290px;
+}
+.input-append input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.input-prepend input {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.input-append .btn:last-child {
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  margin: 0px;
+}
+.input-prepend .btn:first-child {
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  margin: 0px;
+}
+.registration-link-wraper .tooltip.right .hovertext {
+  top: 22px;
+}
+.registration-link-expiry {
+  display: none;
+}
+#registration-link-modal .hovertext {
+    top: 8px;
+}
+.form-horizontal .tooltip.right {
+  padding-top: 10px;
+  display: flex;
+}
+.form-horizontal .tooltip.right.last {
+  border-top: 1px solid #eee;
+}
+.form-horizontal .tooltip.right .last .action {
+  min-width: 120px;
+}
+.form-horizontal .tooltip.right .last .action .button{
+  width: 100%;
+}
+.form-horizontal .tooltip.right .last .action .button:hover {
+  color: #fff;
+}
+.form-horizontal .tooltip.right .action .button:disabled {
+  border: 2px solid #999;
+  background: #999 url(../img/default-bg.gif) bottom repeat-x;
+  color: white;
+  cursor: default;
+}
+
+#registration-link-modal .button,
+#student-upload-modal .button {
+    padding:0 10px;
+}
+
+#registration-link-modal .controls.tooltip.pii-notice,
+#student-upload-modal .controls.tooltip.pii-notice {
+    display: flex;
+}
+
+#registration-link-modal .control-label-narrow.pii-notice,
+#student-upload-modal .control-label-narrow.pii-notice {
+    width: 30px;
+}
+
+#student-settings .student-status{
+  padding-bottom: 60px;
+  margin-left: 122px;
+}
+#student-settings .student-status input[type="checkbox"]{
+  margin-bottom: 12px;
+}
+#student-upload-modal pre{
+  border: 1px solid #bbb;
+  margin-top: 10px;
+  background: #eee;
+  padding: .5em;
+}
+#student-upload-modal input[type="file"]{
+  height: 30px;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+#student-upload-modal .ajax-loader {
+  background-color: transparent;
+}
+#student-upload-modal .csv-info {
+  display: flex;
+}
+#student-upload-modal .csv-info p {
+  margin-bottom: 5px;
+  flex: 50%;
+}
+#student-upload-modal form .button {
+  margin: 0 5px;
+  height: 40px;
+  padding: 0 10px;
+}
+#student-upload-modal h4 {
+    padding-bottom: 8px;
+}
+#student-upload-modal .hovertext {
+    top: 0;
+}
+#student-upload-modal .errors ul {
+  margin: .5em 0 .5em 2em;
+}
+#student-upload-modal.modal {
+  margin-top: 0;
+}
+#student-upload-modal.modal.fade.in {
+  top: 7.5%;
+}
+#classroom-confirm-modal input[name="password"]{
+  width: 260px;
+}
+#classroom-confirm-modal .ajax-loader{
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+#classroom-confirm-modal .password-mismatch-text {
+  color: #d82027;
+}
+#classroom-confirm-modal .password-match-text {
+  color: #18a411;
+}
+#classroom-confirm-modal h3 {
+  margin-bottom: 15px;
+}
+.classroom-status-bar {
+  padding: 5px 10px;
+  background-color: #F9DCB5;
+  color: #A56100;
+  font-weight:700;
+  margin-top: -8px;
+  margin-bottom: 8px !important;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  border: 1px solid #FCC57B;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  line-height: 25px;
+}
+
+#add-gallery-modal .input-classroom {
+  display: none;
+}
+
+.classroom-status-bar.not-visible {
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
+  color: #B94A48;
+}
+
+.sorry-not-visible img {
+  display: block;
+  margin: 75px auto;
+}
