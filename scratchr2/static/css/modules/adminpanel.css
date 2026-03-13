@@ -265,6 +265,25 @@ body.admin.closed #admin-panel .expand {
   margin-right: 8px;
 }
 
+#admin-panel h5.active-memberships-header {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#admin-panel .active-memberships-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#admin-panel .active-memberships-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 10px;
+}
 
 body.admin #explore-bar [data-content="view"] {
   padding-left: 30px;

@@ -17,7 +17,8 @@ Scratch.AdminPanel = Backbone.View.extend({
     'click [data-control-action="remove_student"]' : 'removeStudent',
     'click [data-control-action="confirm-email"]' : 'confirmUserEmail',
     'click [data-control-action="grant-admin-membership"]' : 'grantAdminMembership',
-    'click [data-control-action="revoke-admin-membership"]' : 'revokeAdminMembership'
+    'click [data-control-action="expire-membership"]' : 'expireMembership',
+    'click [data-control-action="expire-all-memberships"]' : 'expireAllMemberships'
   },
 
   initialize: function() {
@@ -795,21 +796,41 @@ Scratch.AdminPanel = Backbone.View.extend({
     const action = 'grant-admin-membership'
     const username = $(e.target).data('controlUser');
 
-    view.updateMembershipData(username, action);
+    view.updateMembershipData(action, {
+      username
+    });
   },
 
-  revokeAdminMembership: function (e) {
+  expireMembership: function (e) {
     var view = this;
-    const action =  'revoke-admin-membership';
+    const action =  'expire-membership';
     const username = $(e.target).data('controlUser');
-    
-    view.updateMembershipData(username, action);
+    const membershipId = $(e.target).data('controlMembershipId');
+
+    view.updateMembershipData(action, {
+      username,
+      membershipId
+    });
   },
 
-  updateMembershipData: function (username, action) {
+  expireAllMemberships: function (e) {
+    if (window.confirm('Are you sure you want to expire all active memberships for this user? This action cannot be undone.')) {
+      var view = this;
+      const action = 'expire-all-memberships';
+      const username = $(e.target).data('controlUser');
+  
+      view.updateMembershipData(action, {
+        username
+      });
+    }
+  },
+
+  updateMembershipData: function (action, data) {
+    const { username, membershipId } = data;
+
     $.ajax('/scratch_admin/profile/' + username + '/update_membership/', {
       type: 'POST',
-      data: { action },
+      data: { action, membership_id: membershipId },
       dataType: 'json',
       success: function (data, textStatus, jqXHR) {
         if (data.err) {
