@@ -99,7 +99,7 @@ function JSredirectTo(loc, inEditor, model) {
         } else if (loc == 'mystuff') {
           window.location.href = '/mystuff/';
         } else if (loc == 'about') {
-            window.location.href = '/about/';
+            window.location.href = 'https://www.scratchfoundation.org';
         } else if (loc == 'settings') {
           window.location.href = '/accounts/password_change/';
         } else if (loc == 'logout') {
