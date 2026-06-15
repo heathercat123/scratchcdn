@@ -793,6 +793,9 @@ Scratch.Comments = Backbone.View.extend({
         } else if (errorType == 'isSpam') {
             showCommentError(gettext(Scratch.ALERT_MSGS['comment-spam']));
             return;
+        } else if (errorType == 'isNotAppro') {
+            showCommentError(gettext(Scratch.ALERT_MSGS['comment-high-traffic']));
+            return;
         } else if (errorType == 'isFlood') {
             showCommentError(gettext(Scratch.ALERT_MSGS['comment-flood']));
             return;

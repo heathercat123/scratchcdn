@@ -18,6 +18,7 @@ Scratch.ALERT_MSGS = {
   'followed': gettext_noop('You are now following '),
   'unfollowed': gettext_noop('You are no longer following '),
   'comment-spam': gettext_noop("Hmm, seems like you've posted the same comment a bunch of times. Please don't spam."),
+  'comment-high-traffic': gettext_noop("Hmm, it seems that you're a attempting to comment in a area that is not appropriate for you."),
   'comment-flood': gettext_noop("Woah, seems like you're commenting really quickly. Please wait longer between posts."),
   'comment-muted': gettext_noop("Hmm, the filterbot is pretty sure your recent comments weren't ok for Scratch, so your account has been muted for the rest of the day. :/"),
   'comment-muted-duration': gettext_noop("You will be able to comment again %(duration)s. Your account has been paused from commenting until then."),
