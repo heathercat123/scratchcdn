@@ -41,10 +41,11 @@ ul.comments li.cv_markedbyfilter {
     background-color: #FFFFBB;
 }
 
-ul.comments li.cv_censbyadmin, 
+ul.comments li.cv_censbyadmin,
 ul.comments li.cv_censbyfilter,
 ul.comments li.cv_delbyadmin,
 ul.comments li.cv_censbycomm,
+ul.comments li.cv_censbychildsafety,
 ul.comments li.cv_parentcommentcensored{
     background-color: #FF9999;
 }

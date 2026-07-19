@@ -395,6 +395,7 @@ comment colors below taken from admin_comments.css
 .comment.cv_censbyfilter,
 .comment.cv_delbyadmin,
 .comment.cv_censbycomm,
+.comment.cv_censbychildsafety,
 .comment.cv_parentcommentcensored {
   background-color: #FF9999;
 }

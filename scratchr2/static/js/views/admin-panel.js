@@ -18,7 +18,9 @@ Scratch.AdminPanel = Backbone.View.extend({
     'click [data-control-action="confirm-email"]' : 'confirmUserEmail',
     'click [data-control-action="grant-admin-membership"]' : 'grantAdminMembership',
     'click [data-control-action="expire-membership"]' : 'expireMembership',
-    'click [data-control-action="expire-all-memberships"]' : 'expireAllMemberships'
+    'click [data-control-action="expire-all-memberships"]' : 'expireAllMemberships',
+    'click [data-control-action="clouddata-ban"]' : 'clouddataBan',
+    'click [data-control-action="clouddata-unban"]' : 'clouddataUnban'
   },
 
   initialize: function() {
@@ -47,6 +49,13 @@ Scratch.AdminPanel = Backbone.View.extend({
           url: url,
           success: this.handleData
       });
+    }
+
+    // Load the cloud data ban status on its own, so a slow/unavailable cloud
+    // data service never blocks the rest of the panel (or its buttons) from
+    // loading. Only present on the user profile slide-out.
+    if ($(this.el).find('#cloud-data-ban-status').length) {
+      this.fetchCloudDataBan();
     }
     if (localStorage.getItem("adminPanelToggled_"+this.entity)!=='closed' && $(this.el).find('DIV.admin-content').children().length > 2) {
       this.show();
@@ -102,6 +111,105 @@ Scratch.AdminPanel = Backbone.View.extend({
           'checked',
           ($('.admin-dialog-ban-template').find(':selected').data('appeal') === 1)
       );
+  },
+
+  cloudDataBanUrl: function() {
+      return '/scratch_admin/clouddata_ban/' + Scratch.INIT_DATA.PROFILE.model.username + '/';
+  },
+
+  // Ask the admin endpoint for the current cloud data ban status and render it.
+  fetchCloudDataBan: function() {
+      var self = this;
+      var el = $(this.el);
+      $.ajax(this.cloudDataBanUrl(), {
+          type: 'POST',
+          data: JSON.stringify({action: 'status'}),
+          dataType: 'json',
+          success: function(resp) { self.renderCloudDataBan(resp.cloud_data_ban); },
+          error: function() { el.find('#cloud-data-ban-status').text('Cloud data ban status unavailable.'); }
+      });
+  },
+
+  // Create a cloud data ban; an empty length means a permanent ban.
+  clouddataBan: function() {
+      var self = this;
+      var el = $(this.el);
+      var lengthVal = el.find('#cloud-data-ban-length').val();
+      var args = {action: 'create'};
+      if ($.trim(lengthVal) !== '') {
+          args.ban_length = lengthVal;
+      }
+      el.find('#cloud-data-ban-status').text('Working…');
+      $.ajax(this.cloudDataBanUrl(), {
+          type: 'POST',
+          data: JSON.stringify(args),
+          dataType: 'json',
+          success: function(resp) { self.renderCloudDataBan(resp.cloud_data_ban); },
+          error: function() { el.find('#cloud-data-ban-status').text('Cloud data ban failed.'); }
+      });
+  },
+
+  // Remove a cloud data ban.
+  clouddataUnban: function() {
+      var self = this;
+      var el = $(this.el);
+      el.find('#cloud-data-ban-status').text('Working…');
+      $.ajax(this.cloudDataBanUrl(), {
+          type: 'POST',
+          data: JSON.stringify({action: 'remove'}),
+          dataType: 'json',
+          success: function(resp) { self.renderCloudDataBan(resp.cloud_data_ban); },
+          error: function() { el.find('#cloud-data-ban-status').text('Cloud data unban failed.'); }
+      });
+  },
+
+  // Render the cloud data ban state into the slide-out and enable/disable the
+  // create/remove buttons accordingly. `info` is the clouddata response (or
+  // null when the user is not banned / cloud data is unavailable).
+  renderCloudDataBan: function(info) {
+      var el = $(this.el);
+      var statusEl = el.find('#cloud-data-ban-status');
+      var banBtn = el.find('button[data-control-action="clouddata-ban"]');
+      var unbanBtn = el.find('button[data-control-action="clouddata-unban"]');
+
+      if (!info || !info.banned) {
+          statusEl.text('Not banned in cloud data.');
+          banBtn.prop('disabled', false).removeClass('disabled');
+          unbanBtn.prop('disabled', true).addClass('disabled');
+          return;
+      }
+
+      var text = 'Banned in cloud data';
+      if (info.date_added) {
+          var added = new Date(info.date_added);
+          text += ' (added ' + (isNaN(added.getTime()) ? info.date_added : added.toLocaleString()) + ')';
+      }
+      if (info.expires_in_seconds === null || typeof info.expires_in_seconds === 'undefined') {
+          text += ' — permanent.';
+      } else {
+          text += ' — expires in ' + this.humanizeDuration(info.expires_in_seconds) + '.';
+      }
+      statusEl.text(text);
+      banBtn.prop('disabled', false).removeClass('disabled');
+      unbanBtn.prop('disabled', false).removeClass('disabled');
+  },
+
+  // Turn a number of seconds into a human-readable "Xd Yh Zm Ws" string.
+  humanizeDuration: function(totalSeconds) {
+      totalSeconds = parseInt(totalSeconds, 10);
+      if (isNaN(totalSeconds) || totalSeconds <= 0) {
+          return '0s';
+      }
+      var days = Math.floor(totalSeconds / 86400);
+      var hours = Math.floor((totalSeconds % 86400) / 3600);
+      var minutes = Math.floor((totalSeconds % 3600) / 60);
+      var seconds = totalSeconds % 60;
+      var parts = [];
+      if (days) { parts.push(days + 'd'); }
+      if (hours) { parts.push(hours + 'h'); }
+      if (minutes) { parts.push(minutes + 'm'); }
+      if (seconds) { parts.push(seconds + 's'); }
+      return parts.join(' ');
   },
 
   handleData: function(data) {

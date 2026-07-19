@@ -65,6 +65,9 @@
 #profile-data .box-head .header-text {
   margin-left: 0;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #profile-data .box-head .buttons {
@@ -136,6 +139,27 @@
   top: 0;
   left: 0;
   font-size: 100px; /* this lets you single click the input in IE */
+}
+
+#profile-avatar.portrait {
+  /* Remove fixed height for profile page avatars */
+  height: auto;
+}
+
+/* Defaults for the avatar box */
+.box .box-head .portrait .avatar-wrapper {
+  height: 55px;
+  width: 55px;
+}
+
+/* Overrides the avatar box to include spacing for the cat-ears frame */
+.box .box-head .portrait .avatar-badge-wrapper {
+  height: 76px;
+  width: 55px;
+}
+
+.box .box-head .portrait .avatar-wrapper img.avatar-badge {
+  border: 1.5px solid #FAA51D;
 }
 
 #profile-box .player [data-control="edit"] {
